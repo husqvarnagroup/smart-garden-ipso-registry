@@ -4,7 +4,7 @@
 		<Name>HomeKit Accessory</Name>
 		<Description1><![CDATA[HomeKit accessory setup support]]></Description1>
 		<ObjectID>28172</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:28169</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:28172</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
 		<ObjectVersion>1.0</ObjectVersion>
 		<MultipleInstances>Single</MultipleInstances>
