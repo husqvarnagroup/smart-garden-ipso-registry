@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>Data Download</Name>
+		<Description1><![CDATA[LONA garden map and zone transfer.
+Valid download request requires all four writable resources to be set within single write.]]></Description1>
+		<ObjectID>28174</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:28174</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>Data</Name>
+				<Operations>W</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Opaque</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Binary data]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Slot</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[File type identifier
+258: garden map
+260: zone]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Checksum</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Opaque</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[CRC16-XModem checksum over the whole content of the data resource. 
+Same algorithm as Lemonbeat uses so the value can directly be passed on to firmware_init.]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Content Tag</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Opaque</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[The content tag is a 32 bit value with the meaning for the backend of identifying the data content (similar to HTTP-ETag). Semantics of the Content Tag is up to the user.]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>Status</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Current state of data download process:
+<empty>: not active
+queued: request received
+verifying: checking data consistency
+initializing: starting upload to device
+uploading: transfer to device in progress
+activating: activating data 
+activated: process completed successfully
+failed: process stopped with error]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>
