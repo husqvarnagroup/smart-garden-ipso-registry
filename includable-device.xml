@@ -4,9 +4,9 @@
 		<Name>Includable Device</Name>
 		<Description1><![CDATA[Represent a device that can be included into the network of the gateway]]></Description1>
 		<ObjectID>28170</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:28170:0.1</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:28170:0.2</ObjectURN>
 		<LWM2MVersion>1.0</LWM2MVersion>
-		<ObjectVersion>0.1</ObjectVersion>
+		<ObjectVersion>0.2</ObjectVersion>
 		<MultipleInstances>Multiple</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
@@ -19,7 +19,7 @@
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Examples:
-55029-watercontrol-a599c2f6-533e-43d2-b1b1-6d355927cab2]]></Description>
+3034F8EE90126D4000000033]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>protocol</Name>
@@ -31,29 +31,6 @@
 				<Units></Units>
 				<Description><![CDATA[1=lwm2m
 2=lemonbeat]]></Description>
-			</Item>
-			<Item ID="3">
-				<Name>category</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>String</Type>
-				<RangeEnumeration>watercontrol,sensor,...</RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[]]></Description>
-			</Item>
-			<Item ID="4">
-				<Name>human_identifier</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Optional</Mandatory>
-				<Type>String</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Might be used for user to simplify identification of device (if multiple devices can be included). Should match identifier that is visible on packaging or the device
-
-lemonbeat: serial number
-lwm2m: probably HID]]></Description>
 			</Item>
 			<Item ID="5">
 				<Name>include</Name>
