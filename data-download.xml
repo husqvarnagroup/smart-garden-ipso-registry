@@ -64,13 +64,13 @@ Same algorithm as Lemonbeat uses so the value can directly be passed on to firmw
 				<Units></Units>
 				<Description><![CDATA[Current state of data download process:
 <empty>: not active
-queued: request received
-verifying: checking data consistency
-initializing: starting upload to device
 uploading: transfer to device in progress
-activating: activating data 
+activating: activating data
 activated: process completed successfully
-failed: process stopped with error]]></Description>
+checksum_mismatch: provided data did not match checksum
+init_failed: device prevented firmware upload start (likely offline)
+upload_failed: failure during data upload
+activation_failed: data not activated]]></Description>
 			</Item>
 		</Resources>
 		<Description2 />
