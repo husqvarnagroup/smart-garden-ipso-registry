@@ -59,18 +59,18 @@ Same algorithm as Lemonbeat uses so the value can directly be passed on to firmw
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>String</Type>
-				<RangeEnumeration></RangeEnumeration>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..7</RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Current state of data download process:
-<empty>: not active
-uploading: transfer to device in progress
-activating: activating data
-activated: process completed successfully
-checksum_mismatch: provided data did not match checksum
-init_failed: device prevented firmware upload start (likely offline)
-upload_failed: failure during data upload
-activation_failed: data not activated]]></Description>
+0: <empty>: not active
+1: uploading: transfer to device in progress
+2: activating: activating data
+3: activated: process completed successfully
+4: checksum_mismatch: provided data did not match checksum
+5: init_failed: device prevented firmware upload start (likely offline)
+6: upload_failed: failure during data upload
+7: activation_failed: data not activated]]></Description>
 			</Item>
 		</Resources>
 		<Description2 />
