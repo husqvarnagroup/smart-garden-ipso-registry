@@ -38,8 +38,8 @@ Valid download request requires all four writable resources to be set within sin
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>Opaque</Type>
-				<RangeEnumeration></RangeEnumeration>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..65535</RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[CRC16-XModem checksum over the whole content of the data resource. 
 Same algorithm as Lemonbeat uses so the value can directly be passed on to firmware_init.]]></Description>
