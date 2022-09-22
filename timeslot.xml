@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+		<Name>Timeslot</Name>
+		<Description1><![CDATA[Timeslot is an instance of a schedule]]></Description1>
+		<ObjectID>28182</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:28182:0.1</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>0.1</ObjectVersion>
+		<MultipleInstances>Multiple</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>start</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Start time in seconds from UNIX epoch.]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>planned_stop</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>s</Units>
+				<Description><![CDATA[Initial planned stop time.]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>adjusted_stop</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>s</Units>
+				<Description><![CDATA[Timeslot stop time after adjustment (same as planned_stop if not adjusted)]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>state</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[TSS state]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>backend_schedule_id</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Schedule ID copied over from corresponding schedule. Only relevant if initial_source is SCHEDULE.
+]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>initial_source</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[How start and planned_stop were set]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>adjustment_source</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[How adjusted_stop was set. Same values as for initial_source. ]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>pre_offset</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Offset to PRE- watering. Zero if SINGLE or PRE, positive if MAIN. Alternatively this could be embedded into backend_schedule_id.
+]]></Description>
+			</Item>
+			<Item ID="32">
+				<Name>set_duration</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Adjust duration.]]></Description>
+			</Item>
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>

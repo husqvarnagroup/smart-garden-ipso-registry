@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+		<Name>Schedule</Name>
+		<Description1><![CDATA[Schedule with sun timing support]]></Description1>
+		<ObjectID>28181</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:28181:0.1</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>0.1</ObjectVersion>
+		<MultipleInstances>Multiple</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>start_offset_from</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Schedule start offset from 0:MIDNIGHT, 1:SUNRISE or 2:SUNSET]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>start_offset_seconds</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>Seconds</Units>
+				<Description><![CDATA[Seconds after/before start offset]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>end_offset_from</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Schedule end offset from.]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>end_offset_seconds</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>Seconds</Units>
+				<Description><![CDATA[Seconds after/before end offset]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>backend_schedule_id</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Backend schedule id (do we need this on the device?)]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>repetition_type</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Repetition cycle type: instructs how to interpret the repetition_value bitmask.]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>repetition_value</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Repetition value bitmask. See repetition_type for more info.]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>actuator</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Actuator ID]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>pre_offset</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Offset to PRE- watering. Zero if SINGLE or PRE, positive if MAIN. Alternatively this could be embedded into backend_schedule_id.
+]]></Description>
+			</Item>
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>
