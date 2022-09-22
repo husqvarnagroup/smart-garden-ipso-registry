@@ -49,8 +49,8 @@ Same algorithm as Lemonbeat uses so the value can directly be passed on to firmw
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>Opaque</Type>
-				<RangeEnumeration></RangeEnumeration>
+				<Type>Integer</Type>
+				<RangeEnumeration>0..4294967295</RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[The content tag is a 32 bit value with the meaning for the backend of identifying the data content (similar to HTTP-ETag). Semantics of the Content Tag is up to the user.]]></Description>
 			</Item>
