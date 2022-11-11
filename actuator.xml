@@ -68,7 +68,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Name>master</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
+				<Mandatory>Optional</Mandatory>
 				<Type>Objlnk</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
