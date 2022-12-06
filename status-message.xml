@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>Lemonbeat Status Message</Name>
+		<Description1><![CDATA[Logging capability for unexpected device events. Used for debugging purposes only. ]]></Description1>
+		<ObjectID>28173</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:28173</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>Type</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0-255</RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[The type of the status.
+1: Public Key
+2: Memory Information
+3: Device Description
+4: Value Description
+5: Value
+6: Partner Information
+7: Action
+8: Calculation
+9: Timer
+10: Calendar
+11: State machine
+12: Firmware update
+13: Configuration
+100: Exi
+101: System
+200: Application]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Code</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Status code in the context of the status type.]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Level</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration>0-5</RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Severity level
+0: Disabled
+1: Important
+2: Error
+3: Warning
+4: Info
+5: Debug]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Data</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Optional</Mandatory>
+				<Type>Opaque</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Additional information in the context of type and code.]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>
