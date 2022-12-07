@@ -67,10 +67,10 @@
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Optional</Mandatory>
-				<Type>Opaque</Type>
+				<Type>String</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Additional information in the context of type and code.]]></Description>
+				<Description><![CDATA[Additional information in the context of type and code. Up to 4 bytes encoded as HEX string.]]></Description>
 			</Item>
 		</Resources>
 		<Description2 />
