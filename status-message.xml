@@ -16,7 +16,7 @@
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
 				<Type>Unsigned Integer</Type>
-				<RangeEnumeration>0-255</RangeEnumeration>
+				<RangeEnumeration>0..255</RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[The type of the status.
 1: Public Key
@@ -52,7 +52,7 @@
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
 				<Type>Unsigned Integer</Type>
-				<RangeEnumeration>0-5</RangeEnumeration>
+				<RangeEnumeration>0..5</RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Severity level
 0: Disabled
