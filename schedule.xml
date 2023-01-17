@@ -102,7 +102,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Offset to PRE- watering. Zero if SINGLE or PRE, positive if MAIN. Alternatively this could be embedded into backend_schedule_id.
+				<Description><![CDATA[Time difference between PRE and MAIN watering. Negative if PRE, positive if MAIN, zero if SINGLE.
 ]]></Description>
 			</Item>
 		</Resources>

@@ -69,10 +69,12 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Optional</Mandatory>
-				<Type>Objlnk</Type>
+				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Link to master valve object, or (65535,65535) if directly controlled.]]></Description>
+				<Description><![CDATA[0:NONE when not linked to master channel.
+1:LINKED if linked to master channel.
+]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>current</Name>
@@ -104,6 +106,16 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Stop with source (backend or app)]]></Description>
+			</Item>
+			<Item ID="34">
+				<Name>reset_error</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Reset actuator error.]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>
