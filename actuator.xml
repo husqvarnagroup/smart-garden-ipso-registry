@@ -94,7 +94,12 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Start with source (backend, app, homekit, ...) and seconds param. See Timeslot/start_source for more info about sources.
+				<Description><![CDATA[Start action of this actuator and create a new timeslot corresponding to this action. Takes two arguments:
+  0: integer: start source. The only purpose is to be copied over to corresponding timeslot.
+     You can see list of values in Timeslot/*/initial_source. Use value 2 if not sure.
+  1: integer: duration in seconds.
+Uses OMA format. Example usage with bnw_cli:
+  $ poetry run bnw ipso exc "$DEVICE" actuator/0/start "as=[0='10',1='60']"
 ]]></Description>
 			</Item>
 			<Item ID="33">
@@ -105,7 +110,11 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Stop with source (backend or app)]]></Description>
+				<Description><![CDATA[Immediately stop actuator. Takes one argument:
+  0: integer: stop source.
+Uses OMA format. Example usage with bnw_cli:
+  $ poetry run bnw ipso exc "$DEVICE" actuator/0/stop "as=[0='10']"
+]]></Description>
 			</Item>
 			<Item ID="34">
 				<Name>reset_error</Name>

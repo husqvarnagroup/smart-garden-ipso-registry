@@ -132,7 +132,11 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Stops all actuators of the device, like closing all valves. With command source like backend or app.]]></Description>
+				<Description><![CDATA[Stops all actuators of the device, like closing all valves. Takes one argument:
+  0: integer: stop source.
+Uses OMA format. Example usage with bnw_cli:
+  $ poetry run bnw ipso exc "$DEVICE" sg_common/0/stop_all_actuators "as=[0='2']"
+]]></Description>
 			</Item>
 			<Item ID="40">
 				<Name>reset_all_actuator_errors</Name>

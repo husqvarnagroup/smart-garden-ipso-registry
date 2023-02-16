@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">
 		<Name>Water Control</Name>
 		<Description1><![CDATA[BNW Tracerbullet WaterControl]]></Description1>
 		<ObjectID>28151</ObjectID>
 		<ObjectURN>urn:oma:lwm2m:x:28151:0.2</ObjectURN>
-	  	<LWM2MVersion>1.1</LWM2MVersion>
+		<LWM2MVersion>1.1</LWM2MVersion>
 		<ObjectVersion>0.2</ObjectVersion>
 		<MultipleInstances>Single</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
@@ -70,7 +74,8 @@
 				<Units></Units>
 				<Description><![CDATA[0: not watering
 1: automatic watering
-2: manual watering]]></Description>
+2: manual watering
+]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>

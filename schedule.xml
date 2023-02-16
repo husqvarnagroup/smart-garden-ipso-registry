@@ -8,9 +8,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 		<Name>Schedule</Name>
 		<Description1><![CDATA[Schedule with sun timing support]]></Description1>
 		<ObjectID>28181</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:28181:0.1</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:28181:0.2</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.1</ObjectVersion>
+		<ObjectVersion>0.2</ObjectVersion>
 		<MultipleInstances>Multiple</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
@@ -54,16 +54,6 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units>Seconds</Units>
 				<Description><![CDATA[Seconds after/before end offset]]></Description>
 			</Item>
-			<Item ID="5">
-				<Name>backend_schedule_id</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Backend schedule id (do we need this on the device?)]]></Description>
-			</Item>
 			<Item ID="6">
 				<Name>repetition_type</Name>
 				<Operations>RW</Operations>
@@ -102,8 +92,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Time difference between PRE and MAIN watering. Negative if PRE, positive if MAIN, zero if SINGLE.
-]]></Description>
+				<Description><![CDATA[Magic cookie used by backend. Copied over to corresponding timeslot.]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>
