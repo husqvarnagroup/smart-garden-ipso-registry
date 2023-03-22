@@ -22,7 +22,8 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Time</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Start time in seconds from UNIX epoch.]]></Description>
+				<Description><![CDATA[Intended start time in seconds since UNIX epoch. Could NOT be adjusted, the whole timeslot has to be cancelled and rescheduled instead. GW timestamp of the RUNNING state should be quite close to this one and should accurately describe the actual time of starting the action.
+]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>adjusted_stop</Name>
@@ -32,7 +33,8 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Time</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>s</Units>
-				<Description><![CDATA[Timeslot stop time after adjustment (same as planned_stop if not adjusted)]]></Description>
+				<Description><![CDATA[Best known stop time (from the device standpoint). Depending on the value of `state` could be either in the past or in the future. Could be changed with `timeslot.adjust_duration()` call or with an `actuator.stop()` call. GW timestamp of the state, immediately following the RUNNING, should be very close to this value.
+]]></Description>
 			</Item>
 			<Item ID="4">
 				<Name>state</Name>
@@ -52,7 +54,8 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[How start and planned_stop were set. ]]></Description>
+				<Description><![CDATA[The reason why this timeslot was created, specifically why `start` has exactly this value. Also applies to why `adjusted_stop` has its value in case `adjustment_source` is NONE.
+]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>adjustment_source</Name>
