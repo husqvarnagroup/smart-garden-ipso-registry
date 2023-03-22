@@ -8,9 +8,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 		<Name>Actuator</Name>
 		<Description1><![CDATA[Generic actuator control for valves, power switch, mower, etc.]]></Description1>
 		<ObjectID>28180</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:28180:0.3</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:28180:0.4</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.3</ObjectVersion>
+		<ObjectVersion>0.4</ObjectVersion>
 		<MultipleInstances>Multiple</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
@@ -85,6 +85,20 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<RangeEnumeration></RangeEnumeration>
 				<Units>mA</Units>
 				<Description><![CDATA[Current in mA (optional)]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>state</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[0:INACTIVE this actuator is currently neither ACTIVE nor performs a state transition
+1:STARTING this actuator is transitioning to the *_ACTIVE state
+2:ACTIVE this actuator is currently running but will stop in case of power loss
+3:STOPPING this actuator is currently leaving an *_ACTIVE state and should soon become INACTIVE
+]]></Description>
 			</Item>
 			<Item ID="32">
 				<Name>start</Name>
