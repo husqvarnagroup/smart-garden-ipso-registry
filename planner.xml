@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+		<Name>Planner</Name>
+		<Description1><![CDATA[handler for combining restrictions and calendar tasks]]></Description1>
+		<ObjectID>31401</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:31401:0.1</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>0.1</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>RestrictionReason</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Restriction reason]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>NextStartTime</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Next start time]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>Override__action</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Override]]></Description>
+			</Item>
+			<Item ID="4">
+				<Name>Override__startTime</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Override]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>Override__duration</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>s</Units>
+				<Description><![CDATA[Override]]></Description>
+			</Item>
+			<Item ID="6">
+				<Name>Override__missionId</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Override]]></Description>
+			</Item>
+			<Item ID="7">
+				<Name>SetOverrideMow</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Forces mowing for a specified time.
+
+# Parameters
+* 0: duration: type: Unsigned Integer, units: "s"
+]]></Description>
+			</Item>
+			<Item ID="8">
+				<Name>SetOverridePark</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Forces park for a specified time.
+
+# Parameters
+* 0: duration: type: Unsigned Integer, units: "s"
+]]></Description>
+			</Item>
+			<Item ID="9">
+				<Name>SetOverrideUntilNextStart</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Forces park until start of next task.]]></Description>
+			</Item>
+			<Item ID="10">
+				<Name>ClearOverride</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Clears override task.]]></Description>
+			</Item>
+			<Item ID="11">
+				<Name>SetOverrideMowMission</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Forces mowing for a specified time.
+
+# Parameters
+* 0: duration: type: Unsigned Integer, units: "s"
+* 1: missionId: type: Unsigned Integer, units: ""
+]]></Description>
+			</Item>
+			<Item ID="12">
+				<Name>SetExternalRestriction</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Restricts mower with a certain reason. ReleaseTime will be 0 (unknown) when this method is used, since the system does not know when the restriction will be released. The restriction will auto expire after 25 hours. If a longer restriction is needed, it must be refreshed by calling this method again.
+
+# Parameters
+* 0: reason: type: Unsigned Integer, units: ""
+]]></Description>
+			</Item>
+			<Item ID="13">
+				<Name>SetExternalRestrictionWithDuration</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Restricts mower with a certain reason, for a specified duration. The restriction is valid for the specified duration, without the need of refreshing it with more calls. Duration is unlimited, but the restriction will auto expire after 25 hours. If a longer restriction is needed, it must be refreshed by calling this method again.
+
+# Parameters
+* 0: reason: type: Unsigned Integer, units: ""
+* 1: duration: type: Unsigned Integer, units: "s"
+]]></Description>
+			</Item>
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>
