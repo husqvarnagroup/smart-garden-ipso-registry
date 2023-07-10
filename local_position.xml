@@ -51,7 +51,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Mandatory>Mandatory</Mandatory>
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
-				<Units>0.1Â°</Units>
+				<Units>0.1°</Units>
 				<Description><![CDATA[Current heading]]></Description>
 			</Item>
 			<Item ID="5">
@@ -61,7 +61,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Mandatory>Mandatory</Mandatory>
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
-				<Units>0.1Â°</Units>
+				<Units>0.1°</Units>
 				<Description><![CDATA[Current heading]]></Description>
 			</Item>
 			<Item ID="6">

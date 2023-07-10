@@ -75,6 +75,26 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Description><![CDATA[Starts a new data collection (LONA scan), if possible (i.e. if available && enabled)]]></Description>
 			</Item>
 		</Resources>
-		<Description2><![CDATA[]]></Description2>
+		<Description2><![CDATA[Lona means LOw cost NAvigation. It is a method of obtaining a sub-meter precision location with a standard GPS. The mower collects sensor data, which is sent to a Lona backend. The post processing in the backend generates a number of maps, which are returned to the mower. With the help of these maps, the mower can obtain a better local position than what is actually given by the GPS. The only map that is public is the GeneratedMap. It is located in the SiteMap family.
+
+The Lona module handles all the logistics around the Lona functionality. It decides when to collect data and when to connect to the Lona backend. It contains information about when the last Lona maps were generated, and so on.
+
+![Lona overview](https://lucid.app/documents/image/686cbd44-af3c-4812-bbae-bcd86422686a/0/2000)
+
+##### Lona states
+
+- **Disabled**. The Lona module is disabled, no data is collected and no connection to the backend will be done.
+- **Building**. Data is being collected, backend is working on the maps. More data is needed. Note that when Lona is collecting data, it requires access to the entire garden. This means that mission handling is disabled, and only default mission 0 is selected.
+- **Ready**. The maps have been generated, nothing will be done until new map generation is triggered.
+- **Not on site**. There are maps available, but the mower is not on the site. This happens when the mower is in a different location than the one the maps were created for. It also happens when the mode Secondary area is used, since maps are not created for secondary areas. 
+
+#### When can the maps be used?
+
+The maps can only be used in the Ready state. When Lona is in this state, the LocalPosition module uses Lona information to create a better position. In all other states, the regular GPS is used.
+
+##### Is that all?
+
+The Lona functionality is complex. But the result is simple. A map of the garden, presented by the SiteMap family. A better position, presented by the LocalPosition family. The improved position enables the possibility to create a ZoneMap (also in the SiteMap family) and have missions like in an EPOS system, but that is really outside the scope of the Lona module.
+]]></Description2>
 	</Object>
 </LWM2M>

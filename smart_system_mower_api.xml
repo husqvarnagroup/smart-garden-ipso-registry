@@ -8,9 +8,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 		<Name>SmartSystemMowerApi</Name>
 		<Description1><![CDATA[]]></Description1>
 		<ObjectID>31416</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:31416:0.1</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:31416:0.2</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.1</ObjectVersion>
+		<ObjectVersion>0.2</ObjectVersion>
 		<MultipleInstances>Single</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>mm</Units>
-				<Description><![CDATA[DrivePastWire]]></Description>
+				<Description><![CDATA[drive past wire]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>EcoMode</Name>
@@ -32,19 +32,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[EcoMode]]></Description>
+				<Description><![CDATA[eco mode enabled]]></Description>
 			</Item>
 			<Item ID="3">
-				<Name>MowerHouse</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Boolean</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[MowerHouse]]></Description>
-			</Item>
-			<Item ID="4">
 				<Name>MobileLoop__available</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -52,9 +42,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[MobileLoop]]></Description>
+				<Description><![CDATA[mobile loop enabled]]></Description>
 			</Item>
-			<Item ID="5">
+			<Item ID="4">
 				<Name>MobileLoop__enabled</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -62,9 +52,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[MobileLoop]]></Description>
+				<Description><![CDATA[mobile loop enabled]]></Description>
 			</Item>
-			<Item ID="6">
+			<Item ID="5">
 				<Name>FrostSensor__available</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -72,9 +62,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[FrostSensor]]></Description>
+				<Description><![CDATA[frost sensor]]></Description>
 			</Item>
-			<Item ID="7">
+			<Item ID="6">
 				<Name>FrostSensor__enabled</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -82,9 +72,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[FrostSensor]]></Description>
+				<Description><![CDATA[frost sensor]]></Description>
 			</Item>
-			<Item ID="8">
+			<Item ID="7">
 				<Name>SensorControl__available</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -92,9 +82,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[SensorControl]]></Description>
+				<Description><![CDATA[sensor control]]></Description>
 			</Item>
-			<Item ID="9">
+			<Item ID="8">
 				<Name>SensorControl__enabled</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -102,9 +92,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[SensorControl]]></Description>
+				<Description><![CDATA[sensor control]]></Description>
 			</Item>
-			<Item ID="10">
+			<Item ID="9">
 				<Name>SensorControl__sensitivity</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -112,9 +102,69 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[SensorControl]]></Description>
+				<Description><![CDATA[sensor control]]></Description>
+			</Item>
+			<Item ID="10">
+				<Name>PositionDisclosure</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[states if position updates are allowed]]></Description>
 			</Item>
 			<Item ID="11">
+				<Name>LonaSettings__enabled</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[lona settings]]></Description>
+			</Item>
+			<Item ID="12">
+				<Name>LonaSettings__available</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[lona settings]]></Description>
+			</Item>
+			<Item ID="13">
+				<Name>LonaMapStatus__timestamp</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[lona map status]]></Description>
+			</Item>
+			<Item ID="14">
+				<Name>LonaMapStatus__state</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[lona map status]]></Description>
+			</Item>
+			<Item ID="15">
+				<Name>LonaMapStatus__progress</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[lona map status]]></Description>
+			</Item>
+			<Item ID="16">
 				<Name>ManualStart</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -128,7 +178,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 * 0: duration: type: Unsigned Integer, units: ""
 ]]></Description>
 			</Item>
-			<Item ID="12">
+			<Item ID="17">
 				<Name>ParkUntilFurtherNotice</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -138,7 +188,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[Parks until further command.]]></Description>
 			</Item>
-			<Item ID="13">
+			<Item ID="18">
 				<Name>ParkUntilNextSchedule</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -148,7 +198,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[Parks until next schedule.]]></Description>
 			</Item>
-			<Item ID="14">
+			<Item ID="19">
 				<Name>StartAccordingToSchedule</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -157,6 +207,26 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[Executes start according to the schedule.]]></Description>
+			</Item>
+			<Item ID="20">
+				<Name>LonaResetToDefault</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Disables Lona and removes any created maps Wrapper function for ILona_ResetToUserDefault.]]></Description>
+			</Item>
+			<Item ID="21">
+				<Name>LonaStartNewDataCollection</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Starts a new data collection (LONA scan), if possible (i.e. if available && enabled) Wrapper function for ILona_StartNewDataCollection.]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>

@@ -35,6 +35,15 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Description><![CDATA[Max number of tasks per day]]></Description>
 			</Item>
 		</Resources>
-		<Description2><![CDATA[]]></Description2>
+		<Description2><![CDATA[The Calendar handles mowing tasks. Use this module to control at what times and what week days the mower shall be active.
+
+## Task handling
+Tasks can be added, modified and deleted. They are accessed using task indexes, which will always be in and uninterrupted range from 0 to number of tasks.
+
+Note! An index of a task is not constant, if a task is deleted the other tasks may have updated indexes. I.e., there is no point in remembering an index of a task for later usage, since it may have been updated.
+
+## Task transaction
+If several modifications to the Calendar shall be done at one instance, a transaction shall be used. After a call to StartTransactions, all modifications are done in a sand box until CommitTransaction is performed. If a transaction is not used for 2s, it is discarded.
+]]></Description2>
 	</Object>
 </LWM2M>

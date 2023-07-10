@@ -5,36 +5,16 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 -->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">
-		<Name>Missions__Missions</Name>
+		<Name>SmartSystemMowerApi__StartingPoints</Name>
 		<Description1><![CDATA[]]></Description1>
-		<ObjectID>31503</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:31503:0.1</ObjectURN>
+		<ObjectID>31507</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:31507:0.1</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
 		<ObjectVersion>0.1</ObjectVersion>
 		<MultipleInstances>Multiple</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
 			<Item ID="1">
-				<Name>name</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Opaque</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[]]></Description>
-			</Item>
-			<Item ID="2">
-				<Name>cuttingHeight</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Unsigned Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units>%</Units>
-				<Description><![CDATA[]]></Description>
-			</Item>
-			<Item ID="3">
 				<Name>enabled</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -44,39 +24,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="4">
-				<Name>mowingArea</Name>
+			<Item ID="2">
+				<Name>proportion</Name>
 				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Opaque</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[]]></Description>
-			</Item>
-			<Item ID="5">
-				<Name>missionType</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Unsigned Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[]]></Description>
-			</Item>
-			<Item ID="6">
-				<Name>lastTimeCompleted</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Time</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[]]></Description>
-			</Item>
-			<Item ID="7">
-				<Name>progress</Name>
-				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
 				<Type>Unsigned Integer</Type>
@@ -84,18 +34,28 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units>%</Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="8">
-				<Name>schedulable</Name>
+			<Item ID="3">
+				<Name>wire</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>Boolean</Type>
+				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="9">
-				<Name>useGlobalCuttingHeight</Name>
+			<Item ID="4">
+				<Name>distance</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>m</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="5">
+				<Name>passageCuttingEnabled</Name>
 				<Operations>RW</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
