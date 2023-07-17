@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Current power mode.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>

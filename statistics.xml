@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>s</Units>
-				<Description><![CDATA[Total Running Time]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>TotalCuttingTime</Name>
@@ -32,7 +32,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>s</Units>
-				<Description><![CDATA[Total Cutting Time]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>TotalChargingTime</Name>
@@ -42,7 +42,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>s</Units>
-				<Description><![CDATA[Total Charging Time]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="4">
 				<Name>TotalSearchingTime</Name>
@@ -52,7 +52,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>s</Units>
-				<Description><![CDATA[Total Searching Time]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="5">
 				<Name>NumberOfCollisions</Name>
@@ -62,7 +62,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Number Of Collisions]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="6">
 				<Name>NumberOfChargingCycles</Name>
@@ -72,7 +72,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Number Of Charging Cycles]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>CuttingBladeUsageTime</Name>
@@ -82,7 +82,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>s</Units>
-				<Description><![CDATA[Cutting Blade Usage Time]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>

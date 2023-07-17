@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[True if the Missions functionality is available in this product, false otherwise.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>CurrentMission</Name>
@@ -32,7 +32,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Currently selected mission.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>ClearProgress</Name>
@@ -42,56 +42,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Clears progress of a mission and will be set to 0% progress.
-
-# Parameters
-* 0: missionId: type: Unsigned Integer, units: ""
-]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
-		<Description2><![CDATA[A mission in the mower is something that the mower can be asked to do. In general, a mission defines *what*, *where*, and *how* something shall be done. Note that it does not define when, this is handled by the Calendar, which points out missions from its tasks.
-
-##### What
-So far, our mowers can only mow grass, so this is always mow. There are not settings for this, that may be added when our products can do other things.
-
-##### Where
-The mission points out one of the working areas in the site map. That specifies where the mission shall be performed.
-
-##### How
-The mission family contains settings that specifies how a mission shall be performed. Settings that are common to all types of missions are available through the Missions family. A specific mission type can extend the number of settings, this is done in the specific mission families such as SystematicMissions.
-
-## Common attributes for all mission types
-All missions, regardless of mission type, have a number of common attributes.
-
-- Unique id
-- Mission type
-- Name
-- Cutting height
-- Mowing area name. This name refers to one of the polygons in the map that is given to the SiteMap.
-
-## Types of missions
-
-##### Default mission
-All "standard" mowers with traditional loop sensors have a default mission, with id 0. This mission is the same at is has always been, i.e. to mow the lawn within the boundaries of the loop wire.
-
-##### Random mission
-For mowers with hirep (good position), a random mission means that it shall mow the specified area using irregular pattern. This mission has few specific settings, but points out a working area to mow.
-
-A mower that support the random missions type, contains the family RandomMissions and will respond True to RandomMissions.GetAvailable().
-
-##### Systematic mission
-For mower with hirep, a systematic mission means that it shall mow systematically. This mission type has a number of specific settings, such as:
-
-- Default mowing direction
-- Direction alternation
-- Edge cutting enabled or disabled
-
-A mower that support the systematic missions type, contains the family SystematicMissions and will respond True to SystematicMissions.GetAvailable(). The specific settings listed above are also available through the SystematicMissions family.
-
-##### Focus area mission (zone control)
-For mowers with lorep (normal loop system), this mission type can be used to roughly specify a part of the garden that shall be mowed. For instance, a working area can be defined to cover the front yard but not the back yard. When the mower runs this mission, it will consider the entire garden as a transport area, and the specified area as the working area.
-
-A mower that support the focus area missions type, contains the family FocusAreaMissions and will respond True to FocusAreaMissions.GetAvailable().
-]]></Description2>
+		<Description2><![CDATA[]]></Description2>
 	</Object>
 </LWM2M>

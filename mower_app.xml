@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Mode]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>State</Name>
@@ -32,7 +32,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[State]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>Activity</Name>
@@ -42,7 +42,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Activity]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="4">
 				<Name>Error</Name>
@@ -52,7 +52,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Error]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="5">
 				<Name>IsErrorConfirmable</Name>
@@ -62,7 +62,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[True if current error is confirmable, false otherwise]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="6">
 				<Name>Mission</Name>
@@ -72,7 +72,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Mission]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>StartTrigger</Name>
@@ -82,7 +82,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Trigger a start of the selected mode.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="8">
 				<Name>Pause</Name>
@@ -92,7 +92,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Pause current operation.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="9">
 				<Name>ConfirmError</Name>
@@ -102,97 +102,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Confirms error. Only applicable in ERROR state, and if the current error is confirmable. Use IsErrorConfirmable() to figure out if it is possible to confirm this error with this command. If the confirm is successful, the mower app will go to Paused state.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
-		<Description2><![CDATA[The mower contains a number of central application modules, MowerApp, Planner and Calendar. The MowerApp is the module that does the actual work, and it would like to do it as much as possible. The Planner, however, has a broader perspective and decides if it is actually a good idea to be mowing right now. It uses the Calendar for organization, and restrictor modules such as the AutoTimer and the FrostSensor that may have an opinion about this.
-
-All planning ends up in a mission to perform. What the mission can be depends on the mower model. The simplest mission is mission 0, default mission, which is usually just mowing the garden that is specified with a standard loop wire. More advanced missions can be systematic mowing missions using high resolution positioning system. In those cases, the SiteMap is used to hold the map of the garden.
-
-![Mower modules](https://lucid.app/documents/image/43f77054-a789-4e66-8772-e2b3c5242a0c/0/2000)
-
-## MowerApp
-MowerApp is a high level interface to the mower application. It handles overall state of the mower, defines the different modes of
-operation, and gives information about current activity of the mower.
-
-## Mode of operation
-##### Auto / main area
-- Mower will mow until low battery. Go home and charge. Leave and continue mowing.
-- Week schedule is used.
-- Schedule can be overridden with forced park or forced mowing.
-
-##### Demo mode
-- Same as main area, but shorter times.
-- No blade operation.
-
-##### Home mode
-- Mower goes home and parks forever.
-- Week schedule is not used.
-- Cannot be overridden with forced mowing.
-
-##### Manual / secondary area
-- Mower will mow until empty battery, or a limited time. When done, it stops in the garden.
-- Week schedule is not used.
-- Cannot be overridden with forced park.
-- If a forced park override timer is set, mower stops when that timer runs out.
-
-## Mower states
-The mower states define the overall state of the mower.
-
-![Mower state diagram](https://lucid.app/documents/image/797ec7e4-cf46-4bc2-838b-1e7ce52977a8/0/2000)
-
-##### Off
-Mower is turned off
-
-##### WaitForSafetyPin
-Mower is waiting for a pin code, for safety reasons. Until a correct pin code is entered, the internal safety supervisor will not allow any operation.
-
-A user can use Authentication.IsTrustedToEnterSafetyPin to understand if a pin code can be entered using his connection. If yes, a pin code view can be displayed, otherwise there is no point.
-
-##### Stopped
-Mower is stopped, and cannot be started remotely. Start requirements (safety or other) are not fulfilled.
-
-##### Fatal error
-A fatal error has occured. Error has to be fixed confirmed to leave this state.
-
-##### Check Safety
-Mower is waiting for safety requirements to be fulfilled. Typically, on a mower with a hatch, it is waiting for the hatch to be closed after start command has been issued.
-
-##### In Operation
-Mower is operating according to selected mode. The activity gives information about what it is currently up to.
-
-##### Restricted
-The mower is currently restricted from mowing for some reason. It will continue mowing when the restriction is removed. The activity gives information about what the mower is currently up to.
-
-##### Error
-A temporary error has occured. If the error is resolved, the mower will resume operation without user interaction. Typically, this happens when the loop signal is lost. When it comes back, the operation is resumes.
-
-## Activities
-When the mower is in the state In Operation or Restricted, it is operating according to the selected mode. In these states, the mower reports an activity that describes what the mower is currently doing.
-
-No functionality shall be build upon the activities, other than displaying for the user what the mower is up to.
-
-![Mower activites](https://lucid.app/documents/image/797ec7e4-cf46-4bc2-838b-1e7ce52977a8/2/2000)
-
-##### Going out
-Mower is currently leaving the charging station and is heading out to a starting point.
-
-##### Mowing
-Mower is currently mowing.
-
-##### Going home
-Mower is currently going home to the charging station.
-
-##### Charging
-Mower is currently charging. Note that the mower will only report the activity charging if it was its own decision to go home and charge. I.e., it would like to mow but is charging because it has to. If the mower is restricted it may very well charge when in the charging station, but the activity will be Parked.
-
-For detailed information about the actual charging status, use the Battery interface.
-
-##### Parked
-Mower is parked in the charging station.
-
-##### Stopped in garden
-Mower has stopped in garden, for instance in manual mode when the task has been completed.
-]]></Description2>
+		<Description2><![CDATA[]]></Description2>
 	</Object>
 </LWM2M>

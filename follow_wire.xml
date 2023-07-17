@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Max. number of installed guides]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>CurrentDistance</Name>
@@ -32,7 +32,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>m</Units>
-				<Description><![CDATA[Current distance]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>TestMode</Name>
@@ -42,7 +42,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Test mode]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="4">
 				<Name>TestState</Name>
@@ -52,7 +52,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Test state]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="5">
 				<Name>BoundaryCorridor</Name>
@@ -62,7 +62,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Boundary corridor limit]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="6">
 				<Name>StartingPointMax</Name>
@@ -72,7 +72,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Max supported starting points]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>TestError</Name>
@@ -82,7 +82,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Error code when in test error state]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="8">
 				<Name>TestStartingPoint</Name>
@@ -92,12 +92,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Test follow out to starting point.
-
-# Parameters
-* 0: id: type: Unsigned Integer, units: ""
-* 1: corridor: type: Unsigned Integer, units: ""
-]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="9">
 				<Name>TestFollowIn</Name>
@@ -107,11 +102,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Test follow in to CS along selected wire.
-
-# Parameters
-* 0: wire: type: Unsigned Integer, units: ""
-]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="10">
 				<Name>TestAbort</Name>
@@ -121,7 +112,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Abort ongoing test in/out.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>

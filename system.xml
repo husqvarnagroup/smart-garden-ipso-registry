@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Startup sequence required flag.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>LocalHmiAvailable</Name>
@@ -32,7 +32,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[True if the device has a local HMI.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>Model__deviceType</Name>
@@ -42,7 +42,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Device model.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="4">
 				<Name>Model__deviceVariant</Name>
@@ -52,7 +52,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Device model.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="5">
 				<Name>SerialNumber</Name>
@@ -62,17 +62,17 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Serial number of this device.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="6">
 				<Name>ConfigVersionString</Name>
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>Opaque</Type>
+				<Type>String</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Version string of the model config.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>SwUpdateRequired</Name>
@@ -82,7 +82,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[If SwUpdateRequired is set, the product must be updated. Either due to ForcedSwUpdateRequired, or if new accessor connected to product.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="8">
 				<Name>ForcedSwUpdateRequired</Name>
@@ -92,17 +92,17 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Boolean</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[If ForcedSwUpdateRequired is set, this SW is not approved for sales and the product must be updated.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="9">
 				<Name>SwPackageVersionString</Name>
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
-				<Type>Opaque</Type>
+				<Type>String</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Sw package version string.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="10">
 				<Name>DeviceGroup</Name>
@@ -112,7 +112,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Unsigned Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Device group.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="11">
 				<Name>ClearStartupSequenceRequired</Name>
@@ -132,7 +132,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type></Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units></Units>
-				<Description><![CDATA[Factory setting of all user settings.]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>

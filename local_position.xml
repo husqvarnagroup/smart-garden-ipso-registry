@@ -22,7 +22,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>mm</Units>
-				<Description><![CDATA[Current 2D coordinate]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="2">
 				<Name>Coordinate2D__y</Name>
@@ -32,7 +32,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>mm</Units>
-				<Description><![CDATA[Current 2D coordinate]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="3">
 				<Name>Coordinate2D__accuracy</Name>
@@ -42,7 +42,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>mm</Units>
-				<Description><![CDATA[Current 2D coordinate]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="4">
 				<Name>Heading__heading</Name>
@@ -52,7 +52,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>0.1°</Units>
-				<Description><![CDATA[Current heading]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="5">
 				<Name>Heading__accuracy</Name>
@@ -62,7 +62,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>0.1°</Units>
-				<Description><![CDATA[Current heading]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="6">
 				<Name>Origin__longitude</Name>
@@ -72,7 +72,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>0.1 micro degree</Units>
-				<Description><![CDATA[Current origin]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="7">
 				<Name>Origin__latitude</Name>
@@ -82,7 +82,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Type>Integer</Type>
 				<RangeEnumeration></RangeEnumeration>
 				<Units>0.1 micro degree</Units>
-				<Description><![CDATA[Current origin]]></Description>
+				<Description><![CDATA[]]></Description>
 			</Item>
 		</Resources>
 		<Description2><![CDATA[]]></Description2>
