@@ -8,9 +8,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 		<Name>SmartSystemMowerApi</Name>
 		<Description1><![CDATA[]]></Description1>
 		<ObjectID>31416</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:31416:0.2</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:31416:0.4</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.2</ObjectVersion>
+		<ObjectVersion>0.4</ObjectVersion>
 		<MultipleInstances>Single</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
@@ -135,7 +135,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="13">
-				<Name>LonaMapStatus__timestamp</Name>
+				<Name>LonaMapStatus__dataCollectionStartedTimestamp</Name>
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
@@ -145,6 +145,16 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Description><![CDATA[]]></Description>
 			</Item>
 			<Item ID="14">
+				<Name>LonaMapStatus__mapsUpdatedTimestamp</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Time</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="15">
 				<Name>LonaMapStatus__state</Name>
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -154,7 +164,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="15">
+			<Item ID="16">
 				<Name>LonaMapStatus__progress</Name>
 				<Operations>R</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -164,7 +174,57 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="16">
+			<Item ID="17">
+				<Name>CurrentSiteId</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="18">
+				<Name>StartingDistance</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Unsigned Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>mm</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="19">
+				<Name>Position__longitude</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>0.1 micro degree</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="20">
+				<Name>Position__latitude</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>0.1 micro degree</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="21">
+				<Name>Position__heading</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units>0.1°</Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="22">
 				<Name>ManualStart</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -174,7 +234,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="17">
+			<Item ID="23">
 				<Name>ParkUntilFurtherNotice</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -184,7 +244,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="18">
+			<Item ID="24">
 				<Name>ParkUntilNextSchedule</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -194,7 +254,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="19">
+			<Item ID="25">
 				<Name>StartAccordingToSchedule</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -204,7 +264,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="20">
+			<Item ID="26">
 				<Name>LonaResetToDefault</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
@@ -214,8 +274,18 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 				<Units></Units>
 				<Description><![CDATA[]]></Description>
 			</Item>
-			<Item ID="21">
+			<Item ID="27">
 				<Name>LonaStartNewDataCollection</Name>
+				<Operations>E</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type></Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[]]></Description>
+			</Item>
+			<Item ID="28">
+				<Name>StartPositionTimer</Name>
 				<Operations>E</Operations>
 				<MultipleInstances>Single</MultipleInstances>
 				<Mandatory>Mandatory</Mandatory>
