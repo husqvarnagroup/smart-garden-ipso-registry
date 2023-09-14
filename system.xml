@@ -8,9 +8,9 @@ SPDX-License-Identifier: LicenseRef-GARDENA
 		<Name>System</Name>
 		<Description1><![CDATA[system settings of the mower]]></Description1>
 		<ObjectID>31403</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:31403:0.1</ObjectURN>
+		<ObjectURN>urn:oma:lwm2m:x:31403:0.2</ObjectURN>
 		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.1</ObjectVersion>
+		<ObjectVersion>0.2</ObjectVersion>
 		<MultipleInstances>Single</MultipleInstances>
 		<Mandatory>Optional</Mandatory>
 		<Resources>
