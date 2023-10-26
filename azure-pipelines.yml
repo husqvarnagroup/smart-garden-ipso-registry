@@ -1,0 +1,22 @@
+
+trigger:
+- "*"
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- checkout: self
+  fetchDepth: 0
+
+- script: sudo apt-get install -qq -y libxml2-utils
+  displayName: 'Install dependencies'
+
+- script: xmllint --noout --schema http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd *.xml
+  displayName: 'Validate IPSO definitions v1.1'
+  workingDirectory: definitions
+
+- script: ./check_changed_ipso_definitions.sh origin/main HEAD
+  displayName: 'Check definition not changed'
+  workingDirectory: scripts
+  condition: and(eq(variables['Build.Reason'], 'PullRequest'), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/main'))
