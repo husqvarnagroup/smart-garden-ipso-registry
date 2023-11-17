@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>WLAN SSID</Name>
+		<Description1><![CDATA[List of WLAN networks detected by WLAN Control scan function.]]></Description1>
+		<ObjectID>28177</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:28177</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Multiple</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>ssid</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Network name (as announced by the access point).]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>key_mgmt</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>String</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[List of acceptable key management protocols:
+- WPA-PSK (WPA pre-shared key)
+- WPA-EAP (WPA using EAP authentication)
+- IEEE8021X (IEEE 802.1x using EAP authentication and, optionally, dynamically generated WEP keys)
+- NONE (plaintext or static WEP keys)
+- UNSUPPORTED (protocol that is not supported by the device)]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>signal_level</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Multiple</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Integer</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Network RSSI]]></Description>
+			</Item>
+		</Resources>
+		<Description2 />
+	</Object>
+</LWM2M>
