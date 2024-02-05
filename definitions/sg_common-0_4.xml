@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>SG Common</Name>
+        <Description1><![CDATA[Smart Garden common resources and executions which are used by most of the devices]]></Description1>
+        <ObjectID>28183</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:28183:0.4</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>0.4</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>be_decision_seconds</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Backend decision time]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>name</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Name used for homekit.]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>fatal_error_log</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Opaque</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Contains callstack dump, reset reason, etc. Formatting TBD]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>reboot_reason</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[
+Values
+------
+0: NONE
+1: POWERUP: Normal power up cycle
+2: WATCHDOG: Watchdog reset.
+3: HARDFAULT: Hardfault reset.
+4: HW_RESET: HW reset.
+5: SW_RESET: SW reset.
+6: ASSERT: SW Assert reset.
+7: STACK_OVERFLOW: Stack overflow reset.
+8: KERNEL_OOPS: Kernel oops reset.
+9: KERNEL_PANIC: Kernel panic reset.
+10: UNHANDLED_IRQ: Unhandled IRQ reset.
+]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>exclusion_requested</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Command to request a device exclusion]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>duty_cycle_tracking_status</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[State of duty cycle tracking
+Values
+------
+0: ENABLED: duty cycle tracking enabled
+1: DISABLED_BY_APP: duty cycle tracking disabled by application
+2: DISABLED_BY_OVERRIDE: duty cycle tracking disabled by an override
+3: DISABLED_BY_APP_AND_OVERRIDE: duty cycle tracking disabled by application and by an override
+]]></Description>
+            </Item>
+            <Item ID="32">
+                <Name>identify</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Blink leds on the device]]></Description>
+            </Item>
+            <Item ID="33">
+                <Name>measure_rf_link</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Measure RF link quality]]></Description>
+            </Item>
+            <Item ID="34">
+                <Name>all_led_off</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Turn all LED off]]></Description>
+            </Item>
+            <Item ID="35">
+                <Name>all_red_led_on</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Turn all red LED on]]></Description>
+            </Item>
+            <Item ID="36">
+                <Name>all_green_led_on</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Turn all green LED on]]></Description>
+            </Item>
+            <Item ID="37">
+                <Name>all_blue_led_on</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Turn all blue LED on]]></Description>
+            </Item>
+            <Item ID="38">
+                <Name>measure_battery</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Measure the battery level]]></Description>
+            </Item>
+            <Item ID="39">
+                <Name>stop_all_actuators</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Stops all actuators of the device, like closing all valves. Takes one argument:
+  0: integer: stop source.
+Uses OMA format. Example usage with bnw_cli:
+  $ poetry run bnw ipso exc "$DEVICE" sg_common/0/stop_all_actuators "as=[0='2']"
+]]></Description>
+            </Item>
+            <Item ID="40">
+                <Name>reset_all_actuator_errors</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Resets all actuators errors. Device errors are not reset.]]></Description>
+            </Item>
+            <Item ID="41">
+                <Name>override_duty_cycle_tracking</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Override duty cycle tracking to disable it for a defined time. Takes one argument:
+  0: integer: time in seconds
+Uses OMA format. Example usage with bnw_cli:
+  $ poetry run bnw ipso exc "$DEVICE" sg_common/0/override_duty_cycle_tracking "as=[0='60']"
+]]></Description>
+            </Item>
+            <Item ID="42">
+                <Name>send_all_objects</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Request the device to send all ipso objects.
+This is a fallback solution to try to recover from an unsynced state covering all intermediate dependencies.
+]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
+</LWM2M>
