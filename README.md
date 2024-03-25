@@ -1,12 +1,16 @@
 # Gardena IPSO Definitions
 
-This repository contains the custom  IPSO definitions used at
-GARDENA for the smart system.
+This repository contains LwM2M object definitions used with the GARDENA smart system.
+
+The LwM2M object definitions consist of
+
+* Objects defined in the [OMA LightweightM2M (LwM2M) Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html)
+* Custom objects defined for the GARDENA smart system
 
 > We currently disallow the modification of IPSO definition files in the `main` branch.
 
 As almost every adjustment to an IPSO definition leads to at least a minor versioning
-bump we just forbid the modification of already released definitions.
+bump, we just forbid the modification of already released definitions.
 This is quite strict. But it's simpler than checking for the versioning
 rules for IPSO objects provided by the OMA.
 
@@ -22,12 +26,12 @@ up to date
 
 ## Where are the definitions used
 
-These are the known parts of the Smart System that use the definitions.
+These are the known parts of the GARDENA smart system that use the definitions.
 
 ### Firmware Update
 
-The repository `sg-firmware-rollout` has the IPSO definitions (this repo) as
-git submodule. The definitions are rolled out together with the firmware files to
+The repository `sg-firmware-rollout` includes the IPSO definitions (this repo) as
+a git submodule. The definitions are rolled out together with the firmware files to
 ensure that the Gateway has always the newest definitions.
 
 ### Smart Garden Gateway
@@ -36,9 +40,9 @@ The most recent definitions are included in the Gateway image with a Yocto recip
 
 ### LwM2M Server
 
-The newest definitions are used in the LwM2M server for easing development. It is
+The latest definitions are packaged with the LwM2M server for easing development. It is
 included as a submodule in the `sg-bnw-lwm2m-server` repository.
 
 ## References
 
-- [Confluence](https://confluence-husqvarna.riada.se/display/SGS/Brave+New+World+IPSO+Registry)
+- Confluence: [Brave New World IPSO Registry](https://confluence-husqvarna.riada.se/display/SGS/Brave+New+World+IPSO+Registry)
