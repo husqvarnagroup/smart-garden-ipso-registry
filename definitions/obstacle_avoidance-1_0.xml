@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+	<Object ObjectType="MODefinition">
+		<Name>ObstacleAvoidance</Name>
+		<Description1><![CDATA[This resource exposes the tif module ObstacleAvoidance of G4 mowers]]></Description1>
+		<ObjectID>31424</ObjectID>
+		<ObjectURN>urn:oma:lwm2m:x:31424:1.0</ObjectURN>
+		<LWM2MVersion>1.1</LWM2MVersion>
+		<ObjectVersion>1.0</ObjectVersion>
+		<MultipleInstances>Single</MultipleInstances>
+		<Mandatory>Optional</Mandatory>
+		<Resources>
+			<Item ID="1">
+				<Name>Available</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Available flag for the ObstacleAvoidance module.
+TifApp Equivalent:
+ObstacleAvoidance.GetAvailable()
+ObstacleAvoidance.SetAvailable(available:True)
+]]></Description>
+			</Item>
+			<Item ID="2">
+				<Name>Enabled</Name>
+				<Operations>RW</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[Enabled flag for the ObstacleAvoidance module.
+TifApp Equivalent:
+ObstacleAvoidance.GetEnabled()
+ObstacleAvoidance.SetEnabled(enabled:True)
+]]></Description>
+			</Item>
+			<Item ID="3">
+				<Name>UseAtBoundary</Name>
+				<Operations>R</Operations>
+				<MultipleInstances>Single</MultipleInstances>
+				<Mandatory>Mandatory</Mandatory>
+				<Type>Boolean</Type>
+				<RangeEnumeration></RangeEnumeration>
+				<Units></Units>
+				<Description><![CDATA[UseAtBoundary determines whether obstacle avoidance shall be done when close to boundary.
+TifApp Equivalent:
+ObstacleAvoidance.GetUseAtBoundary()
+ObstacleAvoidance.SetUseAtBoundary(useAtBoundary:True)
+]]></Description>
+			</Item>
+		</Resources>
+		<Description2><![CDATA[]]></Description2>
+	</Object>
+</LWM2M>
