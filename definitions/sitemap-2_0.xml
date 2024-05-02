@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>SiteMap</Name>
+        <Description1><![CDATA[]]></Description1>
+        <ObjectID>31417</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31417:2.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>2.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="6">
+                <Name>SiteMap</Name>
+                <Operations>W</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Opaque</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[A svg sitemap file prepended with a 12 Byte header. 4 Bytes for the sitemaps total size 4 Bytes for the sitemaps crc 4 Bytes for the headers crc]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>ZoneMap</Name>
+                <Operations>W</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Opaque</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[A svg zone map file prepended with a 12 Byte header. 4 Bytes for the zone maps total size 4 Bytes for the zone maps crc 4 Bytes for the headers crc]]></Description>
+            </Item>
+            <Item ID="9">
+                <Name>ZoneMapUpdated__Event_crc32</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Representation of tif event ZoneMapUpdated (event data crc32)]]></Description>
+            </Item>
+            <Item ID="10">
+                <Name>SiteMapUpdated__Event_crc32</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Representation of tif event SiteMapUpdated (event data crc32)]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
+</LWM2M>
