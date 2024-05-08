@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>EposService</Name>
+        <Description1><![CDATA[]]></Description1>
+        <ObjectID>31430</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31430:1.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>Available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the EposService functionality is available]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Enabled</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the EposService functionality is enabled]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>ServiceStatus</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The status of the external EPOS service provider.]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>SignalQuality</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>%</Units>
+                <Description><![CDATA[Signal quality of correction data stream]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>HasOrigin</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If an Origin exists / has been set before]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>IsOriginValid</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the Origin is valid.]]></Description>
+            </Item>
+            <Item ID="7">
+                <Name>IsOriginSettable</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the Origin is settable based on current position.]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>ConnectionStatus</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The status of the external EPOS connection with respect to backend.]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[The EposService module manages the connection and provides information to the "EPOS via Internet" backend. It communicates if the mower wants correction/assist data and provides a way for the backend to communicate its status to the mower.
+
+##### What does "available" mean on this family?
+The available flag indicates if this mower supports Epos as a service, i.e. is capable of receiving correction data from backend service. It does not reflect whether this mower has an active subscription, that is unknown to the mower.
+
+##### What does "enabled" mean?
+Enabled means that the user has selected to use Epos as a service. If EposService is both available and enabled, the mower will expect to receive correction data when needed.
+]]></Description2>
+    </Object>
+</LWM2M>
