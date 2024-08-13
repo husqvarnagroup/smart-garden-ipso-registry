@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>EdgeCut</Name>
+        <Description1><![CDATA[]]></Description1>
+        <ObjectID>31431</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31430:1.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>Available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the EdgeCut functionality is available]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the EdgeCut functionality is enabled]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>EnabledAtCollision</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[If the EdgeCut functionality is enabled when a collision occurs]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[The EdgeCut module manages the edge cut functionality of the mower. The mower drives in a sweeping circle with its rear blades over the boundary of the garden. 
+
+##### What does "available" mean on this family?
+The available flag indicates if this mower supports EdgeCut functionality.
+
+##### What does "enabled" mean?
+Enabled means that the user has selected to use EdgeCut. If EdgeCut is both available and enabled, the mower will perform an edge cut pattern.
+
+##### What does "enabled at collision" mean?
+Enabled at collision means that the mower also performs the edge cut pattern if a collision occurs. This setting only has an effect if the EdgeCut module is available and enabled.
+]]></Description2>
+    </Object>
+</LWM2M>
