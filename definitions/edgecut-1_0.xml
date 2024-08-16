@@ -8,7 +8,7 @@ SPDX-License-Identifier: LicenseRef-GARDENA
         <Name>EdgeCut</Name>
         <Description1><![CDATA[]]></Description1>
         <ObjectID>31431</ObjectID>
-        <ObjectURN>urn:oma:lwm2m:x:31430:1.0</ObjectURN>
+        <ObjectURN>urn:oma:lwm2m:x:31431:1.0</ObjectURN>
         <LWM2MVersion>1.1</LWM2MVersion>
         <ObjectVersion>1.0</ObjectVersion>
         <MultipleInstances>Single</MultipleInstances>
