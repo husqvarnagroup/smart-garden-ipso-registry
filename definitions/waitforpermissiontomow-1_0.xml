@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>WaitForPermissionToMow</Name>
+        <Description1><![CDATA[]]></Description1>
+        <ObjectID>31432</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31432:1.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>TimeoutBeforeMowingWithoutPermission</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>s</Units>
+                <Description><![CDATA[TimeoutBeforeMowingWithoutPermission]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Enabled]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>IsWaitingForPermissionToMow</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[IsWaitingForPermissionToMow]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>GivePermissionToMow</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[IWaitForPermissionToMow_GivePermissionToMow]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[### Wait for Permission to Mow
+
+This module makes the mower wait for permission before start mowing according to the calendar. The mower will wait for a limited, configurable amount of time. Manual overrides are not affected by this module. This module was introduced for the GARDENA smart system feature [Mowing According to Rain](https://confluence-husqvarna.riada.se/display/SGS/Mowing+According+to+Rain), but it can be used by any service that wants the mower to ask for permission before mowing.
+
+### Basic concept
+
+When the mower wants to go out, this module restricts the mower for a specific time and notifies subscribers about it. A subscriber (e.g. backend service) may either give the permission to mow or set an external restriction itself to keep the mower from mowing. The mower may go back to the charging station during an active calendar task. When the mower is charged, it will ask for permission again before continuing.
+
+
+### Examples
+
+Let's have a look at different examples on how this module works! We assume that the mower works with some backend that has subscribed to the events of this module.
+
+#### Example 1 - It's good weather and the backend will permit mowing
+
+* the mower wants to start mowing because a calendar task is due
+* this module restricts the mower and sends an event to subscribers
+* the mower stays in the charging station
+* the backend receives the event and checks the weather
+* weather is good, so backend calls **IWaitForPermissionToMowTif_GivePermissionToMow()**
+* this module clears restriction
+* mower starts **mowing with permission**
+
+#### Example 2 - It's bad weather and the backend will not permit mowing
+
+* the mower wants to start mowing because a calendar task is due
+* this module restricts the mower and sends an event to subscribers
+* the mower stays in the charging station
+* the backend receives the event and checks the weather
+* the weather is bad, so backend calls **IPlanner_SetExternalRestrictionWithDuration( one hour )**
+* the mower stays in charging station for at least one hour
+
+> If the calendar task is still due after one hour, the mower will ask for permission again
+
+#### Example 3 - Connection between mower and backend is lost
+
+* the mower wants to start mowing because a calendar task is due
+* this module restricts the mower and sends an event to subscribers
+* the mower stays in the charging station
+* the backend does not receive the event, because the connection is lost
+* after a few minutes, a timeout expires and this module clears the restrictions by itself
+* the mower starts **mowing without permission**
+
+> The timeout is configurable.
+]]></Description2>
+    </Object>
+</LWM2M>
