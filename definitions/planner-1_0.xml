@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>Planner</Name>
+        <Description1><![CDATA[handler for combining restrictions and calendar tasks]]></Description1>
+        <ObjectID>31401</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31401:1.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>RestrictionReason</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Restriction reason]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>NextStartTime</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Next start time]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>Override__action</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Override]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>Override__startTime</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Override]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>Override__duration</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>s</Units>
+                <Description><![CDATA[Override]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>Override__missionId</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Override]]></Description>
+            </Item>
+            <Item ID="7">
+                <Name>SetOverrideMow</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Forces mowing for a specified time.
+
+# Parameters
+* 0: duration: type: Unsigned Integer, units: "s"
+]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>SetOverridePark</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Forces park for a specified time.
+
+# Parameters
+* 0: duration: type: Unsigned Integer, units: "s"
+]]></Description>
+            </Item>
+            <Item ID="9">
+                <Name>SetOverrideUntilNextStart</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Forces park until start of next task.]]></Description>
+            </Item>
+            <Item ID="10">
+                <Name>ClearOverride</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Clears override task.]]></Description>
+            </Item>
+            <Item ID="11">
+                <Name>SetOverrideMowMission</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Forces mowing for a specified time.
+
+# Parameters
+* 0: duration: type: Unsigned Integer, units: "s"
+* 1: missionId: type: Unsigned Integer, units: ""
+]]></Description>
+            </Item>
+            <Item ID="12">
+                <Name>SetExternalRestriction</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Restricts mower with a certain reason. ReleaseTime will be 0 (unknown) when this method is used, since the system does not know when the restriction will be released. The restriction will auto expire after 25 hours. If a longer restriction is needed, it must be refreshed by calling this method again.
+
+# Parameters
+* 0: reason: type: Unsigned Integer, units: ""
+]]></Description>
+            </Item>
+            <Item ID="13">
+                <Name>SetExternalRestrictionWithDuration</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Restricts mower with a certain reason, for a specified duration. The restriction is valid for the specified duration, without the need of refreshing it with more calls. Duration is unlimited, but the restriction will auto expire after 25 hours. If a longer restriction is needed, it must be refreshed by calling this method again.
+
+# Parameters
+* 0: reason: type: Unsigned Integer, units: ""
+* 1: duration: type: Unsigned Integer, units: "s"
+]]></Description>
+            </Item>
+            <Item ID="14">
+                <Name>ClearExternalRestriction</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Removes an external restriction.
+
+# Parameters
+* 0: reason: type: Unsigned Integer, units: ""
+]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[The Planner is responsible for what the mower should be doing at the moment. It takes into consideration the tasks in Calendar, but it also considers restrictions due to Autotimer, Frost sensor and other things.
+
+## Main purpose
+The outcome of the Planner is a decision on whether the MowerApp shall be allowed to mow, or if it should be restricted. If it shall mow, the Planner also gives the MowerApp a mission. If it is restricted, the Planner provides information about why it made that decision.
+
+## Override concept
+The Planner has an override feature, which can be used to override the operation decided by the Calendar. There is room for one override at a time, and it occurs from now and for a duration of time. I.e., there is no way to schedule an override in the future.
+
+### Override mow
+SetOverrideMow or SetOverrideMowMission will force the mower to mow for the specified amount of time. When the time has elapsed, the override is removed and the Planner reverts to the Calendar instead.
+
+If the selected mission is a mission that can be completed, such as a systematic mission, the override will be removed when that happens.
+
+An override can be set to last forever, if the duration is set to 0. Note that this does not apply to the case of a mission that can be completed, as described above.
+
+<br/>
+<table>
+<tr><th width="20%"></th><th width="40%">SetOverrideMow</th><th width="40%">SetOverrideMowMission</th></tr>
+<tr>
+   <td>EPOS - Auto mode</td>
+   <td>Will iterate through all missions for the specified time.</td>
+   <td>Mows selected mission, either for the specified time or until completed (for systematic missions).</td>
+</tr>
+<tr>
+   <td>EPOS - Manual mode</td>
+   <td>Not allowed</td>
+   <td>Mows selected mission for the specified time, or until empty battery. Stops in garden when completed.</td>
+</tr>
+<tr>
+   <td>LONA - Auto mode</td>
+   <td>Mows "my lawn" for the specified time</td>
+   <td>Mows selected mission for the specified time<br>
+       - Only allowed for enabled missions<br>
+       - Only allowed if Lona state is MAP_READY.
+   </td>
+</tr>
+<tr>
+   <td>LONA - Manual mode</td>
+   <td>Mows wherever the mower is located, for the specified time or until empty battery. Lona map is not used.</td>
+   <td>Not allowed (except for mission id = 0, which is the same as calling SetOverrideMow).</td>
+</tr>
+</table>
+
+
+### Override park
+SetOverridePark and SetOverrideParkUntilNextStart will force the mower to park for a specified amount of time. When the time has elapsed, the override is removed and the Planner reverts to the Calendar.
+
+Override park until next start means that no more mowing will be done within the current task. Operation will be resumed at the start of the next task instead. If this is issued when there is no current task, it is accepted but becomes rather pointless.
+
+## Restricted
+When the mower app is in the state Restricted, the Planner can explain why. It can also inform about when operation will be resumed again, with the GetNextStartTime command. This is only valid when the mower is restricted.
+
+The Planner will select one of the active restriction reasons as the "public" reason. It is provides two lists of restrictions, where all active restrictions are listed.
+
+### Internal and external restrictions
+There are a number of restrictions that are detected by the mower itself. These are called internal restrictions. In addition, external systems can restrict the mower, called external restrictions. There are two lists, restrictions and external restrictions. If one or more external restrictions are active, there is an entry in the list of internal restrictions called external. This means that there is always at least one entry in the internal restrictions list when the mower is restricted.
+
+### Internal restriction reasons
+
+##### Week schedule
+There is no task in the Calendar right now, nothing to do.
+
+##### Park override
+The restriction is because someone forced us to park, using the override feature.
+
+##### Autotimer
+The Autotimer has decided that the grass is short enough, so there is no need to wear it down even more. This restriction reason is often referred to as Sensor restriction, but it is only used by the Autotimer.
+
+##### Daily limit
+If a model has a maximum allowed mowing time per day, this restriction will apply when that time has run out.
+
+##### Fota (Cloud synchronization)
+When a Fota update is being transferred to the mower, we want to remain in the charging station to ensure that the transfer is successful. The restriction is removed when the transfer is done.
+
+**Note!** The Fota restriction is also used when the mower is transferring data for Lona maps calculation, and other synching with Robotics backend. The name "Fota" for this restriction is therefore no longer applicable, but is kept for backwards compatibility.
+
+##### Frost sensor
+The frost sensor thinks it is too cold to mow.
+
+##### All missions completed
+If the Calendar allows operation of one or more missions right now, but they are all completed, the Planner will restrict the mower from mowing simply because there is nothing more to do.
+
+##### External
+One or more external restrictions are currently active.
+
+### External restriction reasons
+
+External restriction reasons are documented [on this confluence page](https://confluence-husqvarna.riada.se/display/AMC/Documentation+-+Mower+External+Restriction).
+
+## Mission prioritization
+When several missions are available at a specific time, the Planner uses the following prio to decide which mission to choose:
+
+- If an override is active, the mission is specified by the override.
+- If already performing a mission, don't change until it is completed.
+- If a mission was not fully completed last time it was performed, select it in favor of missions that were fully completed.
+- When choosing between two missions that were fully completed last time, select the one that was completed least recent.
+- Do not run the same mission more than once a day (applies only to systematic missions).
+- Do not run the same mission more than once each task (applies only to systematic missions).
+]]></Description2>
+    </Object>
+</LWM2M>
