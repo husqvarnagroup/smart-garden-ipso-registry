@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>SpotCutting</Name>
+        <Description1><![CDATA[]]></Description1>
+        <ObjectID>31434</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31434:1.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>1.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>Available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[True if Spotcutting feature is avaialable on this model.]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>Enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Enables or disables automatic spot cutting.]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>Sensitivity</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Sensitivity for automatic spot cutting trigger.  | 0 = Very low | 1 = Low | 2 = Medium | 3 = High | 4 = Very high]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>Status</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Spot cutting status. | 0 = Automatic spot cutting not active (disabled or mower not running) | 1 = Automatic spot cutting active but not currently running | 2 = Spot cutting will be started when stop button is released | 3 = Spot cutting is running]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>StartTrigger</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Call when mower is running to trigger a spot cut at current position or call when mower is paused or stopped to add a pending start of spot cut]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>Abort</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Call to abort a running spot cut or pending start]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
+</LWM2M>
