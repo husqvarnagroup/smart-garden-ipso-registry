@@ -12,7 +12,11 @@ steps:
 - script: sudo apt-get install -qq -y libxml2-utils
   displayName: 'Install dependencies'
 
-- script: xmllint --noout --schema http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd *.xml
+- script: wget https://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd
+  displayName: 'Get XSD schema for IPSO definitions v1.1'
+  workingDirectory: /tmp
+
+- script: xmllint --noout --schema /tmp/LWM2M-v1_1.xsd *.xml
   displayName: 'Validate IPSO definitions v1.1'
   workingDirectory: definitions
 
