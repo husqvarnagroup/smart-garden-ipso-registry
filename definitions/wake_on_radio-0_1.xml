@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>Wake on Radio</Name>
+        <Description1><![CDATA[Wake on Radio]]></Description1>
+        <ObjectID>28184</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:28184:0.1</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>0.1</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="0">
+                <Name>default_wakeup_channel</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration>1..30</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Default wakeup channel.]]></Description>
+            </Item>
+            <Item ID="1">
+                <Name>wakeup_channel</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration>0..30</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Wakeup channel.]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
+</LWM2M>
