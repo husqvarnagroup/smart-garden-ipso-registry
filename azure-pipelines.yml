@@ -24,3 +24,13 @@ steps:
   displayName: 'Check definition not changed'
   workingDirectory: scripts
   condition: and(eq(variables['Build.Reason'], 'PullRequest'), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/main'))
+
+- script: |
+    # Check script first
+    python3 -m venv .venv && . .venv/bin/activate
+    pip install pre-commit
+    pre-commit run --all-files
+    # Run script
+    ./check_definition_files.py ../definitions
+  displayName: 'Sanity Checks for Specification Files'
+  workingDirectory: scripts
