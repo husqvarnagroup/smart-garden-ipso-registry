@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2025 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>SmartSystemMowerApi</Name>
+        <Description1><![CDATA[]]></Description1>
+        <ObjectID>31416</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31416:4.0</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>4.0</ObjectVersion>
+        <MultipleInstances>Single</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>DrivePastWire</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>mm</Units>
+                <Description><![CDATA[Defines how much the mower drives across the boundary wire]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>EcoMode</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Turn loop fields off when mower is in charging station]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>MobileLoop__available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Availability flag of mobile loop accessory]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>MobileLoop__enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Enable/disable the mobile loop accessory in the garden]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>FrostSensor__available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Availability of frost sensor -  Mower will stay in charging station if a frost condition exists]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>FrostSensor__enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Enable/disable the frost senor]]></Description>
+            </Item>
+            <Item ID="7">
+                <Name>SensorControl__available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Availability of the sensor control - Allows to adapt mowing time according to lawn growth rate]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>SensorControl__enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Enable/disable the sensor control functionality]]></Description>
+            </Item>
+            <Item ID="9">
+                <Name>SensorControl__sensitivity</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>0..4</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Sensitivity of sensor control, ranging from very low to very high]]></Description>
+            </Item>
+            <Item ID="10">
+                <Name>PositionDisclosure</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[PositionDisclosure = true will allow the mower to transmit position related data]]></Description>
+            </Item>
+            <Item ID="11">
+                <Name>LonaSettings__enabled</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Enables/disables the Lona functionality]]></Description>
+            </Item>
+            <Item ID="12">
+                <Name>LonaSettings__available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Availability of Lona functionality]]></Description>
+            </Item>
+            <Item ID="13">
+                <Name>LonaMapStatus__dataCollectionStartedTimestamp</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The timestamp of when the current data collection started]]></Description>
+            </Item>
+            <Item ID="14">
+                <Name>LonaMapStatus__mapsUpdatedTimestamp</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The timestamp when the map files were last updated]]></Description>
+            </Item>
+            <Item ID="15">
+                <Name>LonaMapStatus__state</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>0..3</RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The state of the lona module]]></Description>
+            </Item>
+            <Item ID="16">
+                <Name>LonaMapStatus__progress</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>0..100</RangeEnumeration>
+                <Units>%</Units>
+                <Description><![CDATA[Current estimation of map building progress]]></Description>
+            </Item>
+            <Item ID="17">
+                <Name>CurrentSiteId</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[ID for currently selected site (map)]]></Description>
+            </Item>
+            <Item ID="18">
+                <Name>StartingDistance</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>200..3000</RangeEnumeration>
+                <Units>mm</Units>
+                <Description><![CDATA[Reversing distance of mower when leaving the charging station]]></Description>
+            </Item>
+            <Item ID="19">
+                <Name>Position__longitude</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>0.1 micro degree</Units>
+                <Description><![CDATA[Longitude of current mower position]]></Description>
+            </Item>
+            <Item ID="20">
+                <Name>Position__latitude</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>0.1 micro degree</Units>
+                <Description><![CDATA[Latitude of current mower position]]></Description>
+            </Item>
+            <Item ID="21">
+                <Name>Position__heading</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>0.1°</Units>
+                <Description><![CDATA[Heading of current mower position]]></Description>
+            </Item>
+            <Item ID="22">
+                <Name>ManualStart</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Set the mower into override mow. Payload: duration in s (mandatory)]]></Description>
+            </Item>
+            <Item ID="23">
+                <Name>ParkUntilFurtherNotice</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Set the mower into override park for an indefinite time]]></Description>
+            </Item>
+            <Item ID="24">
+                <Name>ParkUntilNextSchedule</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Set the mower into override park until the next week schedule starts]]></Description>
+            </Item>
+            <Item ID="25">
+                <Name>StartAccordingToSchedule</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The mower will start at the next week schedule]]></Description>
+            </Item>
+            <Item ID="26">
+                <Name>LonaResetToDefault</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Reset the Lona settings to default]]></Description>
+            </Item>
+            <Item ID="27">
+                <Name>LonaStartNewDataCollection</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Start a new Lona data collection]]></Description>
+            </Item>
+            <Item ID="28">
+                <Name>StartPositionTimer</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Duration the mower will repeatedly report its position with the specified interval. Payload: Timeout, Interval]]></Description>
+            </Item>
+            <Item ID="29">
+                <Name>CheckOperatorPin</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Check if provided operator pin is currently active on the mower. Payload: OperatorPinToCheck]]></Description>
+            </Item>
+            <Item ID="30">
+                <Name>UpdateOperatorPin</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Update the current operator pin with a new one. Payload: OldPin, NewPin]]></Description>
+            </Item>
+            <Item ID="31">
+                <Name>ManualStartInZone</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Manually start mowing in a zone. Payload: duration in s (mandatory), areaId]]></Description>
+            </Item>
+            <Item ID="32">
+                <Name>CheckOperatorPinResult__Event_pinValid</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Representation of tif event CheckOperatorPinResult (event data pinValid)]]></Description>
+            </Item>
+            <Item ID="33">
+                <Name>OperatorPinUpdated__Event_updatedPin</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Representation of tif event OperatorPinUpdated (event data updatedPin)]]></Description>
+            </Item>
+            <Item ID="34">
+                <Name>Position__accuracy</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>mm</Units>
+                <Description><![CDATA[Accuracy of current mower position]]></Description>
+            </Item>
+            <Item ID="35">
+                <Name>Position__headingAccuracy</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>0.1°</Units>
+                <Description><![CDATA[Heading accuracy of current mower position]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
+</LWM2M>
