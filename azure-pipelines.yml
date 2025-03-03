@@ -9,7 +9,11 @@ steps:
 - checkout: self
   fetchDepth: 0
 
-- script: sudo apt-get install -qq -y libxml2-utils
+- script: | 
+    set -eu -o pipefail
+
+    sudo apt update
+    sudo apt install -qq -y libxml2-utils
   displayName: 'Install dependencies'
 
 - script: wget https://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd
@@ -26,6 +30,8 @@ steps:
   condition: and(eq(variables['Build.Reason'], 'PullRequest'), eq(variables['System.PullRequest.TargetBranch'], 'refs/heads/main'))
 
 - script: |
+    set -eu -o pipefail
+
     # Check script first
     python3 -m venv .venv && . .venv/bin/activate
     pip install pre-commit
