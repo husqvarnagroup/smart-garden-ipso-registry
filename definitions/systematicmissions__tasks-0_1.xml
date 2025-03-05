@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-License-Identifier: LicenseRef-GARDENA
+-->
+<LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
+    <Object ObjectType="MODefinition">
+        <Name>SystematicMissions__Tasks</Name>
+        <Description1><![CDATA[handler of systematic missions settings per areaId]]></Description1>
+        <ObjectID>31510</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:31510:0.1</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>0.1</ObjectVersion>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>Orientation</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration>[-1800, 1800]</RangeEnumeration>
+                <Units>0.1 deg</Units>
+                <Description><![CDATA[Orientation used for generating the systematic line segments. 0° is pointing east.]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>OrientationShift</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration>[-1800, 1800]</RangeEnumeration>
+                <Units>0.1 deg</Units>
+                <Description><![CDATA[Orientation shift that will be added to the orientation each time the mission is loaded. 
+Can be used for creating certain patterns (e.g. checkerboard or diamonds).
+]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>CurrentOrientation</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration>[-1800, 1800]</RangeEnumeration>
+                <Units>0.1 deg</Units>
+                <Description><![CDATA[Orientation shift that will be added to the orientation each time the mission is loaded. 
+Can be used for creating certain patterns (e.g. checkerboard or diamonds).
+]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>Boundary</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Indicates if boundary mowing should be mowed or not and how. 
+( 0 ) BOUNDARY_DISABLED  : Boundary mowing is disabled
+( 1 ) BOUNDARY_FIXED     : The outermost boundary lap will be mowed always with the same fixed track, yielding a well-defined edge.
+( 2 ) BOUNDARY_SHIFTING  : The outermost boundary track will always be shifted a bit to reduce the risk of creating wheel tracks in the grass.
+]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>MowingPriority</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Decide if Area is being mowed first or the boundary.
+( 0 ) AREA_FIRST
+( 1 ) BOUNDARY_FIRST
+]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>MowingOverlap</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>[0, 100]</RangeEnumeration>
+                <Units>mm</Units>
+                <Description><![CDATA[Define the overlap of the mowed lines.]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>NavigationType</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[( 0 ) FREE_NAVIGATION
+( 1 ) BOUNDARY_NAVIGATION
+]]></Description>
+            </Item>
+            <Item ID="9">
+                <Name>Progress</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration>[0, 100]</RangeEnumeration>
+                <Units>%</Units>
+                <Description><![CDATA[Progress of mowed area]]></Description>
+            </Item>
+            <Item ID="10">
+                <Name>areaId</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
+</LWM2M>
