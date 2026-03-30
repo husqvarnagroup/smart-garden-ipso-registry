@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-FileCopyrightText: Copyright (c) 2026 GARDENA GmbH
 SPDX-License-Identifier: LicenseRef-GARDENA
 -->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
@@ -76,7 +76,26 @@ Values
                 <Type>Boolean</Type>
                 <RangeEnumeration></RangeEnumeration>
                 <Units></Units>
-                <Description><![CDATA[Command to request a device exclusion]]></Description>
+                <Description><![CDATA[This resource is set to true when a device excludes itself from the smart system (e.g. by triggering
+an exclusion with a button on the device). A device performs a factory reset right after setting this
+resource to true.
+
+Values:
+False   Device is in normal operation
+True    Device requests to be excluded from smart system. Device either performs a factory reset soon
+        or already performed the factory reset.
+
+Background:
+The bnw architecture was designed with the assumption that devices will always send a bootstrap message
+after the exclusion. Since this is not applicable to all devices, this resource has been introduced to
+determine device-side exclusions.
+
+This resource also overcomes the missing "unbootstrap" feature of LwM2M. See:
+https://github.com/OpenMobileAlliance/OMA_LwM2M_for_Developers/issues/573
+
+This resource provides the lwm2m server with the information required to solve this issue:
+https://jira-husqvarna.riada.se/browse/SG-20532
+]]></Description>
             </Item>
             <Item ID="6">
                 <Name>duty_cycle_tracking_status</Name>
@@ -185,8 +204,8 @@ Values
                 <Units></Units>
                 <Description><![CDATA[Stops all actuators of the device, like closing all valves. Takes one argument:
   0: integer: stop source.
-Uses OMA format. Example usage with bnw_cli:
-  $ poetry run bnw ipso exc "$DEVICE" sg_common/0/stop_all_actuators "as=[0='2']"
+Uses OMA format. Example usage with BNW CLI:
+  $ bnw ipso exc "$DEVICE" sg_common/0/stop_all_actuators "as=[0='2']"
 ]]></Description>
             </Item>
             <Item ID="40">
@@ -209,8 +228,8 @@ Uses OMA format. Example usage with bnw_cli:
                 <Units></Units>
                 <Description><![CDATA[Override duty cycle tracking to disable it for a defined time. Takes one argument:
   0: integer: time in seconds
-Uses OMA format. Example usage with bnw_cli:
-  $ poetry run bnw ipso exc "$DEVICE" sg_common/0/override_duty_cycle_tracking "as=[0='60']"
+Uses OMA format. Example usage with BNW CLI:
+  $ bnw ipso exc "$DEVICE" sg_common/0/override_duty_cycle_tracking "as=[0='60']"
 ]]></Description>
             </Item>
             <Item ID="42">

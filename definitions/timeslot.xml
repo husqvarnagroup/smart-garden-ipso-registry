@@ -1,109 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-FileCopyrightText: Copyright (c) 2026 GARDENA GmbH
 SPDX-License-Identifier: LicenseRef-GARDENA
 -->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">
-		<Name>Timeslot</Name>
-		<Description1><![CDATA[Timeslot is an instance of a schedule]]></Description1>
-		<ObjectID>28182</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:28182:0.2</ObjectURN>
-		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.2</ObjectVersion>
-		<MultipleInstances>Multiple</MultipleInstances>
-		<Mandatory>Optional</Mandatory>
-		<Resources>
-			<Item ID="1">
-				<Name>start</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Time</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Intended start time in seconds since UNIX epoch. Could NOT be adjusted, the whole timeslot has to be cancelled and rescheduled instead. GW timestamp of the RUNNING state should be quite close to this one and should accurately describe the actual time of starting the action.
+        <Name>Timeslot</Name>
+        <Description1><![CDATA[Timeslot is an instance of a schedule]]></Description1>
+        <ObjectID>28182</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:28182:0.2</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>0.2</ObjectVersion>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>start</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Intended start time in seconds since UNIX epoch. Could NOT be adjusted, the whole timeslot has to be cancelled and rescheduled instead. GW timestamp of the RUNNING state should be quite close to this one and should accurately describe the actual time of starting the action.
 ]]></Description>
-			</Item>
-			<Item ID="3">
-				<Name>adjusted_stop</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Time</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units>s</Units>
-				<Description><![CDATA[Best known stop time (from the device standpoint). Depending on the value of `state` could be either in the past or in the future. Could be changed with `timeslot.adjust_duration()` call or with an `actuator.stop()` call. GW timestamp of the state, immediately following the RUNNING, should be very close to this value.
+            </Item>
+            <Item ID="3">
+                <Name>adjusted_stop</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>s</Units>
+                <Description><![CDATA[Best known stop time (from the device standpoint). Depending on the value of `state` could be either in the past or in the future. Could be changed with `timeslot.adjust_duration()` call or with an `actuator.stop()` call. GW timestamp of the state, immediately following the RUNNING, should be very close to this value.
 ]]></Description>
-			</Item>
-			<Item ID="4">
-				<Name>state</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[TSS state]]></Description>
-			</Item>
-			<Item ID="6">
-				<Name>initial_source</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[The reason why this timeslot was created, specifically why `start` has exactly this value. Also applies to why `adjusted_stop` has its value in case `adjustment_source` is NONE.
+            </Item>
+            <Item ID="4">
+                <Name>state</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[TSS state
+Values
+------
+0: IDLE: No or invalid schedule
+1: SCHEDULED: Schedule is active and is waiting to get scheduled
+2: WILL_START: Schedule is ready to start, wait for BE decision
+3: SKIPPED: Skip schedule
+4: UNUSED: LB firmware used this code for SHORTEN_DURATION
+5: RUNNING: Schedule is running
+6: STOPPED: Schedule stopped
+7: ERROR: An error occurred affecting the schedule
+8: OVERWRITTEN: Schedule is overwritten because of manual watering
+9: DONE: Schedule finished
+10: DELETED: Schedule finished
+11: REQUESTED: State machine primed for execution
 ]]></Description>
-			</Item>
-			<Item ID="7">
-				<Name>adjustment_source</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[How adjusted_stop was set. Same values as for initial_source. ]]></Description>
-			</Item>
-			<Item ID="8">
-				<Name>pre_offset</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Magic cookie used by backend. Copied over from schedule config.]]></Description>
-			</Item>
-			<Item ID="9">
-				<Name>actuator</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Corresponding actuator id (zero-indexed).]]></Description>
-			</Item>
-			<Item ID="32">
-				<Name>adjust_duration</Name>
-				<Operations>E</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type></Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Adjust duration of planned or running timeslot. Only has effect on timeslots in states SCHEDULED, WILL_START, RUNNING (has no effect on timeslots in all other states). Takes two arguments:
+            </Item>
+            <Item ID="6">
+                <Name>initial_source</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[The reason why this timeslot was created, specifically why `start` has exactly this value. Also applies to why `adjusted_stop` has its value in case `adjustment_source` is NONE.
+
+Values
+------
+0: NONE: Only relevant for adjustment.
+1: PHYSICAL_BUTTON: Relevant for start reason only.
+2: ERROR: Relevant for stop reason only, e.g. valve overcurrent.
+3: SCHEDULE: For scheduled events.
+4: BOOK_KEEPING: Only used internally by the scheduler.
+10: BLUETOOTH: Used by Bluetooth application interface.
+16: SMART_SYSTEM: Used by smart system app, e.g. for manual start & stop actions.
+17: HOMEKIT: Used by HomeKit a.k.a. Apple Home.
+18: WEB_SOCKET: Used by websocketd (for integrations like Home Assistant).
+]]></Description>
+            </Item>
+            <Item ID="7">
+                <Name>adjustment_source</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[How adjusted_stop was set. Same values as for initial_source. ]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>pre_offset</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Magic cookie used by backend. Copied over from schedule config.]]></Description>
+            </Item>
+            <Item ID="9">
+                <Name>actuator</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Corresponding actuator id (zero-indexed).]]></Description>
+            </Item>
+            <Item ID="32">
+                <Name>adjust_duration</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Adjust duration of planned or running timeslot. Only has effect on timeslots in states SCHEDULED, WILL_START, RUNNING (has no effect on timeslots in all other states). Takes two arguments:
   0: integer: adjustment source. Updates the adjustment_source field.
-     See initial_source above for list of available values. Use value 2 if not sure.
+     See initial_source above for list of available values.
   1: integer: new duration in seconds.
 Uses OMA format. Example usage with bnw_cli:
-  $ poetry run bnw ipso exc "$DEVICE" timeslot/0/set_duration "as=[0='10',1='120']"
+  $ bnw ipso exc "$DEVICE" timeslot/0/adjust_duration "as=[0='16',1='120']"
 ]]></Description>
-			</Item>
-		</Resources>
-		<Description2><![CDATA[]]></Description2>
-	</Object>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
 </LWM2M>

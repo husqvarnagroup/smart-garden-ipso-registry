@@ -1,60 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-FileCopyrightText: Copyright (c) 2026 GARDENA GmbH
 SPDX-License-Identifier: LicenseRef-GARDENA
 -->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">
-		<Name>Master channel</Name>
-		<Description1><![CDATA[Master channel for irrigation control]]></Description1>
-		<ObjectID>30000</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:30000:0.1</ObjectURN>
-		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.1</ObjectVersion>
-		<MultipleInstances>Multiple</MultipleInstances>
-		<Mandatory>Optional</Mandatory>
-		<Resources>
-			<Item ID="1">
-				<Name>available</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Boolean</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Indicate that the master channel is available and connected]]></Description>
-			</Item>
-			<Item ID="2">
-				<Name>error</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Device and/or actuator specific error]]></Description>
-			</Item>
-			<Item ID="3">
-				<Name>active</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Boolean</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Master channel is active / running]]></Description>
-			</Item>
-			<Item ID="4">
-				<Name>pressure_release_time</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units>s</Units>
-				<Description><![CDATA[Default time is 20 s]]></Description>
-			</Item>
-		</Resources>
-		<Description2><![CDATA[]]></Description2>
-	</Object>
+        <Name>Master channel</Name>
+        <Description1><![CDATA[Master channel for irrigation control]]></Description1>
+        <ObjectID>30000</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:30000:0.1</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>0.1</ObjectVersion>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Indicate that the master channel is available and connected]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>error</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Device and/or actuator specific error
+Values
+------
+0: NONE
+1: EXCEEDED_VALVES_LIMIT: Can't open valve because of the limit of 2.
+2: VALVE_NOT_CONNECTED: Valve not connected at this time.
+3: EXCEEDED_CURRENT: Valve closed because channel drains more than allowed current.
+4: EXCEEDED_TOTAL_CURRENT: Valve closed because total current over max.
+5: MASTER_VALVE: Master valve error.
+6: DURATION_TOO_SHORT: Specified duration is too short.
+7: SHORT_CIRCUIT: Valve connection is shorted.
+8: EXCEEDED_SWITCH_TIMEOUT: Actuator failed to open within time limit
+]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>active</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Master channel is active / running]]></Description>
+            </Item>
+            <Item ID="4">
+                <Name>pressure_release_time</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>s</Units>
+                <Description><![CDATA[Default time is 20 s]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
 </LWM2M>

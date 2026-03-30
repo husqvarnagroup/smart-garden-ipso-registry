@@ -1,146 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
+SPDX-FileCopyrightText: Copyright (c) 2026 GARDENA GmbH
 SPDX-License-Identifier: LicenseRef-GARDENA
 -->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">
-		<Name>Actuator</Name>
-		<Description1><![CDATA[Generic actuator control for valves, power switch, mower, etc.]]></Description1>
-		<ObjectID>28180</ObjectID>
-		<ObjectURN>urn:oma:lwm2m:x:28180:0.4</ObjectURN>
-		<LWM2MVersion>1.1</LWM2MVersion>
-		<ObjectVersion>0.4</ObjectVersion>
-		<MultipleInstances>Multiple</MultipleInstances>
-		<Mandatory>Optional</Mandatory>
-		<Resources>
-			<Item ID="1">
-				<Name>default_duration_seconds</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units>s</Units>
-				<Description><![CDATA[Duration of action started with a physical button. Setting to 0 disables the start on button press.]]></Description>
-			</Item>
-			<Item ID="2">
-				<Name>available</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Boolean</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Indicate whether this actuator is available (e.g. valve connected)]]></Description>
-			</Item>
-			<Item ID="3">
-				<Name>error</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Device and/or actuator specific error]]></Description>
-			</Item>
-			<Item ID="4">
-				<Name>paused_until</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Time</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units>s</Units>
-				<Description><![CDATA[Scheduled actions paused until seconds from unix epoch]]></Description>
-			</Item>
-			<Item ID="5">
-				<Name>name</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>String</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Name to be used for homekit?]]></Description>
-			</Item>
-			<Item ID="6">
-				<Name>master</Name>
-				<Operations>RW</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Optional</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[0:NONE when not linked to master channel.
-1:LINKED if linked to master channel.
+        <Name>Actuator</Name>
+        <Description1><![CDATA[Generic actuator control for valves, power switch, mower, etc.]]></Description1>
+        <ObjectID>28180</ObjectID>
+        <ObjectURN>urn:oma:lwm2m:x:28180:0.4</ObjectURN>
+        <LWM2MVersion>1.1</LWM2MVersion>
+        <ObjectVersion>0.4</ObjectVersion>
+        <MultipleInstances>Multiple</MultipleInstances>
+        <Mandatory>Optional</Mandatory>
+        <Resources>
+            <Item ID="1">
+                <Name>default_duration_seconds</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>s</Units>
+                <Description><![CDATA[Duration of action started with a physical button. Setting to 0 disables the start on button press.]]></Description>
+            </Item>
+            <Item ID="2">
+                <Name>available</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Boolean</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Indicate whether this actuator is available (e.g. valve connected)]]></Description>
+            </Item>
+            <Item ID="3">
+                <Name>error</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Device and/or actuator specific error
+Values
+------
+0: NONE
+1: EXCEEDED_VALVES_LIMIT: Can't open valve because of the limit of 2.
+2: VALVE_NOT_CONNECTED: Valve not connected at this time.
+3: EXCEEDED_CURRENT: Valve closed because channel drains more than allowed current.
+4: EXCEEDED_TOTAL_CURRENT: Valve closed because total current over max.
+5: MASTER_VALVE: Master valve error.
+6: DURATION_TOO_SHORT: Specified duration is too short.
+7: SHORT_CIRCUIT: Valve connection is shorted.
+8: EXCEEDED_SWITCH_TIMEOUT: Actuator failed to open within time limit
+9: INSUFFICIENT_POWER_SUPPLY: Actuator not opened because of insufficient power supply.
+10: INSUFFICIENT_TEMPERATURE: Actuator not opened because of low temperature.
 ]]></Description>
-			</Item>
-			<Item ID="7">
-				<Name>current</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Optional</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units>mA</Units>
-				<Description><![CDATA[Current in mA (optional)]]></Description>
-			</Item>
-			<Item ID="8">
-				<Name>state</Name>
-				<Operations>R</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type>Integer</Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[0:INACTIVE this actuator is currently neither ACTIVE nor performs a state transition
-1:STARTING this actuator is transitioning to the *_ACTIVE state
-2:ACTIVE this actuator is currently running but will stop in case of power loss
-3:STOPPING this actuator is currently leaving an *_ACTIVE state and should soon become INACTIVE
+            </Item>
+            <Item ID="4">
+                <Name>paused_until</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Time</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>s</Units>
+                <Description><![CDATA[Scheduled actions paused until seconds from unix epoch]]></Description>
+            </Item>
+            <Item ID="5">
+                <Name>name</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>String</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Name to be used for HomeKit.]]></Description>
+            </Item>
+            <Item ID="6">
+                <Name>master</Name>
+                <Operations>RW</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Master channel
+Values
+------
+0: NONE: Not linked to master channel.
+1: LINKED: Linked to master channel.
 ]]></Description>
-			</Item>
-			<Item ID="32">
-				<Name>start</Name>
-				<Operations>E</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type></Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Start action of this actuator and create a new timeslot corresponding to this action. Takes two arguments:
+            </Item>
+            <Item ID="7">
+                <Name>current</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Optional</Mandatory>
+                <Type>Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units>mA</Units>
+                <Description><![CDATA[Current in mA (optional)]]></Description>
+            </Item>
+            <Item ID="8">
+                <Name>state</Name>
+                <Operations>R</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type>Unsigned Integer</Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Current actuator state
+Values
+------
+0: INACTIVE: Actuator is currently neither ACTIVE nor performs a state transition.
+1: STARTING: Actuator is transitioning to the ACTIVE state.
+2: ACTIVE: Actuator is currently running but will stop in case of power loss.
+3: STOPPING: Actuator is currently leaving an ACTIVE state and should soon become INACTIVE.
+]]></Description>
+            </Item>
+            <Item ID="32">
+                <Name>start</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Start action of this actuator and create a new timeslot corresponding to this action. Takes two arguments:
   0: integer: start source. The only purpose is to be copied over to corresponding timeslot.
-     You can see list of values in Timeslot/*/initial_source. Use value 2 if not sure.
+     You can see a list of values in timeslot/initial_source.
   1: integer: duration in seconds.
 Uses OMA format. Example usage with bnw_cli:
-  $ poetry run bnw ipso exc "$DEVICE" actuator/0/start "as=[0='10',1='60']"
+  $ bnw ipso exc "$DEVICE" actuator/0/start "as=[0='16',1='60']"
 ]]></Description>
-			</Item>
-			<Item ID="33">
-				<Name>stop</Name>
-				<Operations>E</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type></Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Immediately stop actuator. Takes one argument:
-  0: integer: stop source.
+            </Item>
+            <Item ID="33">
+                <Name>stop</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Immediately stop actuator. Takes one argument:
+  0: integer: stop source. Same values as for start source (a.k.a. initial source).
 Uses OMA format. Example usage with bnw_cli:
-  $ poetry run bnw ipso exc "$DEVICE" actuator/0/stop "as=[0='10']"
+  $ bnw ipso exc "$DEVICE" actuator/0/stop "as=[0='16']"
 ]]></Description>
-			</Item>
-			<Item ID="34">
-				<Name>reset_error</Name>
-				<Operations>E</Operations>
-				<MultipleInstances>Single</MultipleInstances>
-				<Mandatory>Mandatory</Mandatory>
-				<Type></Type>
-				<RangeEnumeration></RangeEnumeration>
-				<Units></Units>
-				<Description><![CDATA[Reset actuator error.]]></Description>
-			</Item>
-		</Resources>
-		<Description2><![CDATA[]]></Description2>
-	</Object>
+            </Item>
+            <Item ID="34">
+                <Name>reset_error</Name>
+                <Operations>E</Operations>
+                <MultipleInstances>Single</MultipleInstances>
+                <Mandatory>Mandatory</Mandatory>
+                <Type></Type>
+                <RangeEnumeration></RangeEnumeration>
+                <Units></Units>
+                <Description><![CDATA[Reset actuator error.]]></Description>
+            </Item>
+        </Resources>
+        <Description2><![CDATA[]]></Description2>
+    </Object>
 </LWM2M>
