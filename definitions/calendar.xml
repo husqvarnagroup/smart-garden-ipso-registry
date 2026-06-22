@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 SPDX-FileCopyrightText: Copyright (c) 2022 GARDENA GmbH
-SPDX-License-Identifier: LicenseRef-GARDENA
+SPDX-License-Identifier: GPL-3.0-or-later
 -->
 <LWM2M xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.openmobilealliance.org/tech/profiles/LWM2M-v1_1.xsd">
     <Object ObjectType="MODefinition">

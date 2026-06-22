@@ -1,5 +1,9 @@
 #!/usr/bin/env sh
 
+# SPDX-FileCopyrightText: GARDENA GmbH
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 set -u
 set -e
 

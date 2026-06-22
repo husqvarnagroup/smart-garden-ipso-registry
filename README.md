@@ -1,3 +1,9 @@
+<!--
+SPDX-FileCopyrightText: 2026 GARDENA GmbH
+
+SPDX-License-Identifier: GPL-3.0-or-later
+-->
+
 # Gardena IPSO Definitions
 
 This repository contains LwM2M object definitions used with the GARDENA smart system.

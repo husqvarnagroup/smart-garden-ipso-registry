@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 GARDENA GmbH
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 repos:
 - repo: https://github.com/astral-sh/ruff-pre-commit
   # Ruff version.
