@@ -2,15 +2,16 @@ version = 1
 
 [[annotations]]
 path = [
+  "3rd-party/LWM2M-v1_1.xsd",
   "definitions/0-1_1.xml",
-  "definitions/3-1_0.xml",
-  "definitions/5-1_1.xml",
-  "definitions/5-1_0.xml",
-  "definitions/4-1_2.xml",
-  "definitions/1-1_1.xml",
-  "definitions/3-1_1.xml",
   "definitions/1-1_0.xml",
+  "definitions/1-1_1.xml",
+  "definitions/3-1_0.xml",
+  "definitions/3-1_1.xml",
   "definitions/3303-1_0.xml",
+  "definitions/4-1_2.xml",
+  "definitions/5-1_0.xml",
+  "definitions/5-1_1.xml",
 ]
 SPDX-License-Identifier = "BSD-3-Clause"
 
