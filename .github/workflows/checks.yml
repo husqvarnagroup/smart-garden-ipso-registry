@@ -1,0 +1,40 @@
+# SPDX-FileCopyrightText: 2026 GARDENA GmbH
+#
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+name: Checks
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  reuse:
+    name: Checks
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # need branch main in PRs
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+      - name: Enforce REUSE compliance
+        run: uv run reuse lint
+
+      - name: Enforce pre-commit compliance
+        run: uv run pre-commit run --all-files
+
+      - name: Install xmllint
+        shell: sh
+        run: |
+          sudo apt update
+          sudo apt install -y libxml2-utils
+      - name: Validate IPSO definitions v1.1
+        run: xmllint --noout --schema 3rd-party/LWM2M-v1_1.xsd definitions/*.xml
+
+      - name: Prevent changes to definitions
+        run: scripts/check_changed_ipso_definitions.sh origin/main HEAD
