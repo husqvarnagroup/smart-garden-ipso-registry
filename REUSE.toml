@@ -13,3 +13,10 @@ path = [
   "definitions/3303-1_0.xml",
 ]
 SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = [
+  "uv.lock",
+]
+SPDX-FileCopyrightText = "NONE"
+SPDX-License-Identifier = "CC0-1.0"
